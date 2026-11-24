@@ -1,0 +1,21 @@
+#theme-switch { display: none !important; }
+
+/* Layout fix: long unbreakable URLs in notes were inflating fieldsets (default min-width: min-content),
+   pushing homework text under job_hunt and trash buttons out of their windows. */
+.row2 > .col-narrow, .row2 > .col-wide { min-width: 0; }
+.win, .winbody, fieldset { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.item { min-width: 0; }
+.item-body { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
+.item-text, .item-note, .item-link { overflow-wrap: anywhere; word-break: break-word; }
+.item-meta { min-width: 0; }
+.item .trash-btn { flex-shrink: 0; margin-left: auto; }
+
+/* Today strip: slim row of event chips under the urgent cards */
+#today-strip { display: none; align-items: center; gap: 6px; margin: 8px 0 2px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+#today-strip::-webkit-scrollbar { display: none; }
+#today-strip .ts-lab { font: 700 11px/1 ui-monospace, Menlo, monospace; letter-spacing: .08em; color: var(--accent, #d6246e); flex-shrink: 0; }
+#today-strip .ts-chip { flex-shrink: 0; font-size: 12px; line-height: 1; padding: 5px 9px; border: 1px solid var(--accent, #d6246e); background: var(--inset, #fff); color: inherit; text-decoration: none; }
+#today-strip a.ts-chip:hover { background: var(--accent, #d6246e); color: #fff; }
+#today-strip .ts-t { font-weight: 700; font-family: ui-monospace, Menlo, monospace; }
+#today-strip .ts-chip.cls { border-style: double; border-width: 3px; padding: 3px 7px; }
+#today-strip .ts-chip.maybe { border-style: dashed; opacity: .85; }

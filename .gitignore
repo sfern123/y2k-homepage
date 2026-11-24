@@ -1,0 +1,6 @@
+# Personal run output: never commit
+usage-log.csv
+backups/
+__pycache__/
+*.pyc
+.DS_Store

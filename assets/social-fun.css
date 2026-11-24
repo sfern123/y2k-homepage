@@ -1,0 +1,88 @@
+/* ============ LAB: phone social calendar + IM "to decide" + spam pop-up "to do" + it-girl sisyphus ============ */
+body #plant svg { filter: none !important; }
+body.theme-aero { --hill: #8fdc55; --rock: #f2fbff; }
+body.theme-pink98 { --hill: #f5a3c9; --rock: #fff0f7; }
+body.theme-lilac98 { --hill: #cfb2ee; --rock: #faf5ff; }
+
+.win:has(#soc-week) > .winbody { display: flex; gap: 18px; align-items: flex-start; }
+#soc-week { flex: 0 0 236px; }
+#sec-social { flex: 1; min-width: 0; }
+@media (max-width: 720px) { .win:has(#soc-week) > .winbody { flex-direction: column; align-items: stretch; } #soc-week { flex-basis: auto; } }
+.fun-h { font: bold 11px "Courier New", monospace; margin: 0 0 6px; letter-spacing: .04em; }
+
+/* phone */
+.phone { position: relative; width: 212px; margin: 26px auto 4px; padding: 16px 12px 14px; border-radius: 34px 34px 42px 42px;
+  background: linear-gradient(135deg, #ffe0f0 0%, #ff9fd0 40%, #e0288a 100%); border: 2px solid #6e1c46;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.75), inset 0 -5px 0 rgba(0,0,0,.15), 4px 6px 0 rgba(0,0,0,.2); }
+.phone::before { content: ""; position: absolute; right: 28px; top: -24px; width: 12px; height: 26px; border-radius: 6px 6px 2px 2px; background: linear-gradient(90deg, #ff9fd0, #e0288a); border: 2px solid #6e1c46; border-bottom: none; }
+.phone::after { content: "\2726"; position: absolute; left: 14px; top: 10px; color: #fff; font-size: 12px; text-shadow: 0 0 4px #fff; }
+.ph-speaker { width: 46px; height: 6px; margin: 0 auto 8px; border-radius: 3px; background: repeating-linear-gradient(90deg, #6e1c46 0 3px, transparent 3px 5px); }
+.ph-screen { height: 300px; display: flex; flex-direction: column; border: 6px solid #2b1a2e; border-radius: 10px; background: #f6efff; overflow: hidden; box-shadow: inset 0 0 12px rgba(120,60,160,.25); }
+.ph-status { display: flex; justify-content: space-between; padding: 2px 5px; font: bold 10px "Courier New", monospace; background: #ff9ccf; color: #4a0f2e; }
+.ph-title { padding: 2px; text-align: center; font: bold 11px Tahoma, sans-serif; background: #4a0f2e; color: #fff; }
+.ph-list { flex: 1; overflow-y: auto; padding: 2px 6px 6px; font: 11px/1.35 "Courier New", monospace; color: #2b1a2e; scrollbar-width: thin; scroll-behavior: smooth; }
+.ph-day { margin: 7px 0 2px; padding: 1px 5px; font-weight: bold; background: #ffd1e6; border-left: 3px solid #e0288a; }
+.ph-ev { display: flex; gap: 5px; padding: 2px 0; border-bottom: 1px dotted #d9b3c9; }
+.ph-ev .t { width: 46px; flex-shrink: 0; color: #e0288a; font-weight: bold; }
+.ph-ev.maybe .w::after { content: " ?"; color: #e0288a; font-weight: bold; }
+.ph-ev.maybe { opacity: .78; }
+.ph-ev a { color: #2b1a2e; }
+.ph-empty { padding: 30px 6px; text-align: center; }
+.ph-soft { display: flex; justify-content: space-between; padding: 2px 7px; font: bold 10px Tahoma, sans-serif; background: #ff9ccf; color: #4a0f2e; }
+.ph-nav { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 10px 0 8px; }
+.ph-nav button { font: bold 10px Tahoma, sans-serif; color: #6e1c46; background: linear-gradient(#fff, #ffd1e6); border: 1px solid #6e1c46; border-radius: 10px; padding: 3px 10px; cursor: pointer; }
+.ph-nav .ok { border-radius: 50%; width: 30px; height: 30px; padding: 0; }
+.ph-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.ph-keys span { height: 17px; border-radius: 9px; background: linear-gradient(#fff, #ffd1e6); border: 1px solid #6e1c46; font: bold 10px/15px Tahoma, sans-serif; color: #6e1c46; text-align: center; }
+
+/* IM window */
+.im { margin-bottom: 16px; border: 2px solid; border-color: #fff #6b5a8a #6b5a8a #fff; background: #efe4ff; box-shadow: 3px 3px 0 rgba(0,0,0,.25); }
+.im-title { display: flex; justify-content: space-between; align-items: center; padding: 3px 4px 3px 7px; font: bold 12px Tahoma, sans-serif; color: #fff; background: linear-gradient(90deg, #2f3fb8, #8f7bff); }
+.im-title .b { display: flex; gap: 2px; } .im-title .b i { width: 15px; height: 13px; background: #efe4ff; border: 1px solid; border-color: #fff #555 #555 #fff; font: bold 9px/11px Tahoma; color: #000; text-align: center; font-style: normal; }
+.im-tools { display: flex; gap: 18px; padding: 4px 12px; border-bottom: 1px solid #c9b8e8; font: 10px Tahoma, sans-serif; }
+.im-tools span { text-align: center; } .im-tools b { display: block; font-size: 17px; font-weight: normal; }
+.im-log { max-height: 330px; overflow-y: auto; margin: 6px; padding: 8px; background: #fff; border: 2px solid; border-color: #808080 #fff #fff #808080; }
+.im-msg { display: flex; gap: 7px; margin-bottom: 9px; }
+/* my replies sit on the right like a real text thread */
+.im-msg.me { flex-direction: row-reverse; }
+.im-msg.me > div { display: flex; flex-direction: column; align-items: flex-end; text-align: right; max-width: 85%; }
+.im-msg.me .im-bub { border-radius: 10px 10px 2px 10px; }
+.im-av { width: 26px; height: 26px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 15px; background: #dfe6ff; border: 1px solid #445; }
+.im-msg.me .im-av { background: #ffd1e6; }
+.im-who { font: bold 11px "Courier New", monospace; color: #2f3fb8; }
+.im-msg.me .im-who { color: #d6246e; }
+.im-bub { display: inline-block; max-width: 100%; margin-top: 2px; padding: 4px 10px; font: 12px/1.4 "Courier New", monospace; color: #111; background: #e6ecff; border: 1px solid #2f3fb8; border-radius: 10px 10px 10px 2px; }
+.im-msg.me .im-bub { background: #ffe3f0; border-color: #d6246e; }
+.im-bub a { color: #2f3fb8; font-weight: bold; }
+.im-bub label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.im-msg.done .im-bub { text-decoration: line-through; opacity: .6; }
+.im-msg.me.done .im-bub { text-decoration: none; opacity: 1; }
+.im-input { display: flex; gap: 6px; padding: 0 6px 6px; }
+.im-box { flex: 1; height: 34px; padding: 3px 6px; font: 12px "Courier New", monospace; color: #888; background: #fff; border: 2px solid; border-color: #808080 #fff #fff #808080; }
+.im-send { font: bold 11px Tahoma, sans-serif; padding: 0 12px; background: #efe4ff; border: 2px solid; border-color: #fff #555 #555 #fff; }
+.im-status { padding: 2px 8px 4px; font: 10px Tahoma, sans-serif; color: #555; border-top: 1px solid #c9b8e8; }
+.im-status .dots::after { content: "..."; animation: blink 1s steps(1) infinite; }
+.im-empty { padding: 16px; text-align: center; font: 12px "Courier New", monospace; color: #666; }
+
+/* spam pop-ups */
+.spam-wall { display: flex; flex-wrap: wrap; padding: 4px 0 6px; }
+.spam { position: relative; z-index: 1; width: calc(50% - 8px); margin: 0 8px 12px 0; background: #c0c0c0; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 3px 3px 0 #000; transform: rotate(var(--r)) translate(var(--x), var(--y)); transition: transform .12s; }
+@media (max-width: 900px) { .spam { width: 100%; } }
+.spam:hover { z-index: 5; transform: rotate(0) scale(1.03); }
+.spam-bar { display: flex; justify-content: space-between; align-items: center; padding: 2px 3px 2px 5px; font: bold 11px Tahoma, sans-serif; color: #fff; background: linear-gradient(90deg, #000080, #1084d0); }
+.spam-bar i { width: 14px; height: 12px; font: bold 9px/10px Tahoma; font-style: normal; text-align: center; color: #000; background: #c0c0c0; border: 1px solid; border-color: #fff #404040 #404040 #fff; }
+.spam-ban { margin: 5px 5px 0; padding: 8px 4px; text-align: center; font: 900 19px/1.05 Impact, "Arial Black", sans-serif; letter-spacing: 1px; border: 1px solid #000; }
+.spam-ban.v0 { background: #000; color: #39ff14; }
+.spam-ban.v1 { background: #ffe600; color: #e00000; -webkit-text-stroke: 1px #000; paint-order: stroke fill; text-shadow: 3px 3px 0 #000; }
+.spam-ban.v2 { background: linear-gradient(#d00000 0 50%, #39d353 50%); color: #ffe600; -webkit-text-stroke: 1px #000; paint-order: stroke fill; animation: blink 1.2s steps(1) infinite; }
+.spam-ban.v3 { background: #ffb6d9; color: #000; border: 2px dashed #000; }
+.spam-ban.v4 { background: #0033cc; color: #ff4040; -webkit-text-stroke: 1px #fff; paint-order: stroke fill; }
+.spam-ban.v5 { background: #ff7f00; color: #fff; text-shadow: 2px 2px 0 #7a2e00; }
+.spam-ban.v6 { background: #bde3ff; color: #ff2fa0; -webkit-text-stroke: 1px #7a0045; paint-order: stroke fill; }
+.spam-body { margin: 5px 5px 0; padding: 6px 7px; font: 12px/1.4 Tahoma, sans-serif; background: #fff; border: 1px solid #808080; }
+.spam-body .item-meta { margin-top: 4px; }
+.spam-foot { display: flex; justify-content: space-between; align-items: center; gap: 6px; padding: 6px 5px; }
+.spam-btn { display: inline-flex; align-items: center; gap: 5px; padding: 2px 8px; font: bold 11px Tahoma, sans-serif; color: #000; background: #c0c0c0; border: 2px solid; border-color: #fff #404040 #404040 #fff; cursor: pointer; }
+.spam-foot a { font: bold 11px Tahoma, sans-serif; color: #0000ee; }
+.spam.done { opacity: .55; filter: grayscale(1); }
+.spam-empty { width: 100%; padding: 14px; text-align: center; font: 12px "Courier New", monospace; background: #000; color: #39ff14; border: 2px solid #404040; }

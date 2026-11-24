@@ -1,0 +1,95 @@
+/* ===================== GAME MODE (lab only): HUD, XP, levels, stickers, PRESS START ===================== */
+#arcade-hud, #sticker-book-win, #press-start, #lvlup, #ach { display: none; }
+body.game-on #arcade-hud, body.game-on #sticker-book-win { display: block; }
+
+/* synthwave HUD */
+#arcade-hud {
+  position: relative; height: 136px; margin-bottom: 14px; overflow: hidden; border: 2px solid #000; box-shadow: 3px 3px 0 #000;
+  background: linear-gradient(180deg, #12052e 0%, #2c0b52 36%, #7a1f7a 60%, #e0457b 78%, #ff9a5a 100%);
+}
+.hud-stars { position: absolute; inset: 0 0 50% 0; background:
+  radial-gradient(1px 1px at 12% 20%, #fff, transparent), radial-gradient(1px 1px at 28% 60%, #fff, transparent),
+  radial-gradient(1.5px 1.5px at 44% 14%, #fff, transparent), radial-gradient(1px 1px at 63% 42%, #fff, transparent),
+  radial-gradient(1.5px 1.5px at 78% 18%, #fff, transparent), radial-gradient(1px 1px at 90% 55%, #fff, transparent); animation: blink 2.4s steps(1) infinite; }
+.hud-sun { position: absolute; left: 50%; top: 34px; width: 124px; height: 124px; margin-left: -62px; border-radius: 50%;
+  background: linear-gradient(180deg, #fff27a 0%, #ffb347 45%, #ff5fa2 100%);
+  -webkit-mask: linear-gradient(180deg, #000 0 50%, transparent 50% 54%, #000 54% 60%, transparent 60% 65%, #000 65% 70%, transparent 70% 76%, #000 76% 80%, transparent 80%);
+          mask: linear-gradient(180deg, #000 0 50%, transparent 50% 54%, #000 54% 60%, transparent 60% 65%, #000 65% 70%, transparent 70% 76%, #000 76% 80%, transparent 80%); }
+.hud-grid { position: absolute; left: -60%; right: -60%; bottom: -6px; height: 58px; transform: perspective(80px) rotateX(52deg); transform-origin: 50% 100%;
+  background-image: repeating-linear-gradient(90deg, rgba(255,90,210,.95) 0 2px, transparent 2px 38px), repeating-linear-gradient(0deg, rgba(255,90,210,.95) 0 2px, transparent 2px 14px), linear-gradient(#2a0040, #520066);
+  animation: hudDrive .7s linear infinite; }
+@keyframes hudDrive { from { background-position: 0 0, 0 0, 0 0; } to { background-position: 0 0, 0 14px, 0 0; } }
+.hud-palm { position: absolute; bottom: 2px; font-size: 56px; line-height: 1; z-index: 1; filter: drop-shadow(0 0 5px rgba(0,0,0,.6)); }
+.hud-palm.l { left: 4px; } .hud-palm.r { right: 4px; transform: scaleX(-1); }
+.hud-stats { position: relative; z-index: 2; display: flex; justify-content: space-between; gap: 8px 14px; padding: 7px 12px 0; flex-wrap: wrap; }
+.hud-stat { display: flex; align-items: center; gap: 6px; }
+.hud-lbl { font: 900 15px "Arial Black", Impact, sans-serif; letter-spacing: 1px; -webkit-text-stroke: 1px #000; paint-order: stroke fill; text-shadow: 2px 2px 0 #000; }
+.hud-lbl.t { color: #ff9a3c; } .hud-lbl.s { color: #c77dff; } .hud-lbl.l { color: #7fd3ff; } .hud-lbl.v { color: #ff5fa8; } .hud-lbl.k { color: #7dff9a; } .hud-lbl.h { color: #fff; }
+.hud-val { font: bold 18px "Courier New", monospace; color: #ffe066; text-shadow: 2px 2px 0 #000, 0 0 8px rgba(255,224,102,.55); }
+.hud-xp { width: 86px; height: 11px; border: 2px solid #000; background: #2a0b3d; }
+.hud-xp i { display: block; height: 100%; background: repeating-linear-gradient(90deg, #7dff9a 0 6px, #3fcf6a 6px 8px); transition: width .5s steps(6); }
+.hud-mid { position: absolute; z-index: 2; left: 0; right: 0; top: 50px; text-align: center; }
+.hud-coin { display: inline-block; font: 900 16px "Arial Black", Impact, sans-serif; color: #fff; -webkit-text-stroke: 1px #000; paint-order: stroke fill; text-shadow: 2px 2px 0 #b3186a; padding: 2px 10px; background: rgba(0,0,0,.25); }
+.hud-coin.insert { animation: blink 1s steps(1) infinite; }
+.hud-replay { display: block; margin: 6px auto 0; font: bold 10px "Courier New", monospace; color: #fff; background: rgba(0,0,0,.35); border: 1px solid #fff; padding: 1px 6px; cursor: pointer; }
+.hud-boss { position: absolute; z-index: 2; left: 70px; right: 70px; bottom: 6px; text-align: center; font: bold 12px "Courier New", monospace; color: #fff; text-shadow: 1px 1px 0 #000, 0 0 4px #000; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hud-boss b { color: #ff6b6b; }
+
+/* floating +XP */
+.xp-float { position: fixed; z-index: 90; pointer-events: none; text-align: center; transform: translate(-50%, -50%); animation: xpUp 1.5s ease-out forwards; }
+.xp-float .pts { font: 900 20px "Arial Black", Impact, sans-serif; color: #ffe066; -webkit-text-stroke: 1.5px #000; paint-order: stroke fill; text-shadow: 2px 2px 0 #000; }
+.xp-float .nt { display: block; font: 900 11px "Arial Black", sans-serif; color: #ff5fa8; -webkit-text-stroke: 1px #000; paint-order: stroke fill; }
+@keyframes xpUp { 0% { opacity: 0; margin-top: 0; } 12% { opacity: 1; } 100% { opacity: 0; margin-top: -60px; } }
+
+/* LEVEL UP heart */
+#lvlup { position: fixed; inset: 0; z-index: 95; align-items: center; justify-content: center; flex-direction: column; background: rgba(20,6,40,.35); cursor: pointer; }
+#lvlup.show { display: flex; }
+#lvlup .lv-heart { width: 280px; animation: lvPop .6s cubic-bezier(.2,1.6,.4,1) both, lvWob 1.2s .6s ease-in-out infinite alternate; }
+#lvlup .lv-sub { margin-top: 6px; font: 900 22px "Arial Black", Impact, sans-serif; color: #ffe066; -webkit-text-stroke: 2px #000; paint-order: stroke fill; text-shadow: 3px 3px 0 #000; letter-spacing: 2px; }
+@keyframes lvPop { from { transform: scale(.1) rotate(-20deg); } to { transform: scale(1) rotate(6deg); } }
+@keyframes lvWob { from { transform: rotate(6deg) scale(1); } to { transform: rotate(-4deg) scale(1.05); } }
+
+/* achievement toast */
+#ach { position: fixed; left: 16px; bottom: 16px; z-index: 92; min-width: 250px; padding: 8px 12px; background: #120a24; color: #fff; border: 3px solid; border-image: linear-gradient(90deg, #ff5fa8, #ffe066, #7dff9a, #7fd3ff, #c77dff) 1; box-shadow: 4px 4px 0 #000; font: bold 12px "Courier New", monospace; animation: achIn .35s steps(4) both; }
+#ach.show { display: flex; gap: 10px; align-items: center; }
+#ach .ae { font-size: 34px; } #ach .at { color: #ffe066; font: 900 11px "Arial Black", sans-serif; letter-spacing: 1px; }
+@keyframes achIn { from { transform: translateX(-120%); } to { transform: none; } }
+
+/* sticker book */
+#sticker-book-win .book-head { font: bold 11px "Courier New", monospace; margin: 0 0 8px; }
+#sticker-book-win .book { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.stk { text-align: center; padding: 8px 4px 6px; border-radius: 14px; background: #fff; border: 2px solid #000; box-shadow: 2px 2px 0 #000; transform: rotate(var(--r, 0deg)); transition: transform .15s; }
+.stk .e { display: block; font-size: 30px; line-height: 1.1; }
+.stk .n { display: block; margin-top: 3px; font: bold 10px Tahoma, sans-serif; text-transform: uppercase; color: #000; }
+.stk .d { display: block; font: 9px Tahoma, sans-serif; color: #555; line-height: 1.25; }
+.stk.locked { background: repeating-linear-gradient(45deg, #efefef 0 4px, #e0e0e0 4px 8px); opacity: .7; }
+.stk.locked .e { filter: grayscale(1) brightness(0) opacity(.3); }
+.stk:not(.locked):hover { transform: rotate(0) scale(1.07); }
+
+/* PRESS START splash */
+#press-start { position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; background: rgba(20,6,40,.55); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
+body.game-on #press-start.show { display: flex; }
+.ps-frame { position: relative; width: min(600px, 92vw); padding: 26px; background: #f6f3ff; border-radius: 26px; box-shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 0 0 2px #fff; animation: lvPop .5s cubic-bezier(.2,1.4,.4,1) both; }
+.ps-screen { position: relative; overflow: hidden; text-align: center; padding: 34px 18px 18px; border: 6px solid #2b2b3a; border-radius: 14px;
+  background: radial-gradient(circle, rgba(255,255,255,.33) 1px, transparent 1.7px) 0 0 / 7px 7px, radial-gradient(ellipse at 50% 38%, #9ad6ff 0%, #3b8cff 45%, #1f4fd6 100%); }
+.ps-title { font: italic 900 64px/.95 "Arial Black", Impact, sans-serif; letter-spacing: 3px; transform: skewX(-8deg); }
+.ps-title span { display: block; -webkit-text-stroke: 3px #fff; paint-order: stroke fill; }
+.ps-title .a { color: #4f7bff; text-shadow: 4px 4px 0 #1b2a7a, 7px 7px 0 #0d1540; }
+.ps-title .b { color: #ff4fa3; text-shadow: 4px 4px 0 #8e1c52, 7px 7px 0 #4a0a2a; }
+.ps-btns { display: flex; gap: 14px; justify-content: center; margin: 26px 0 14px; flex-wrap: wrap; }
+.ps-btn { font: 900 22px "Arial Black", sans-serif; letter-spacing: 3px; color: #fff; padding: 12px 30px; border-radius: 6px; cursor: pointer; border: 3px solid #1a1a2e; text-shadow: 2px 2px 0 rgba(0,0,0,.35);
+  box-shadow: inset 0 -7px 0 rgba(0,0,0,.25), inset 0 4px 0 rgba(255,255,255,.45), 0 5px 0 #1a1a2e; }
+.ps-btn.start { background: linear-gradient(180deg, #ff9ccf, #ff3f98); }
+.ps-btn.apply { background: linear-gradient(180deg, #7b97ff, #2f4fd6); }
+.ps-btn:hover { filter: brightness(1.08); }
+.ps-btn:active { transform: translateY(4px); box-shadow: inset 0 -3px 0 rgba(0,0,0,.25), 0 1px 0 #1a1a2e; }
+.ps-stats { font: bold 13px "Courier New", monospace; color: #fff; text-shadow: 1px 1px 0 #0d1540; }
+.ps-fine { margin-top: 8px; font: bold 11px "Courier New", monospace; color: #e6f0ff; letter-spacing: 1px; }
+.ps-hint { margin-top: 6px; font: bold 12px "Courier New", monospace; color: #fff; animation: blink 1s steps(1) infinite; }
+.ps-spark { position: absolute; color: #fff; text-shadow: 0 0 6px #fff; animation: blink 1.3s steps(1) infinite; }
+.ps-stk { position: absolute; line-height: 1; filter: drop-shadow(2px 3px 0 rgba(0,0,0,.2)); animation: decoBob 2s ease-in-out infinite alternate; }
+.ps-dot { position: absolute; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font: 900 18px "Arial Black", sans-serif; color: #111; border: 2px solid #111; box-shadow: 2px 2px 0 #111; }
+.ps-pill { position: absolute; padding: 6px 18px; border-radius: 999px; font: italic 900 20px "Arial Black", sans-serif; color: #fff; background: linear-gradient(180deg, #8f7bff, #4b3fd6); border: 3px solid #fff; box-shadow: 0 0 0 2px #4b3fd6, 3px 4px 0 2px rgba(0,0,0,.2); transform: rotate(-6deg); }
+@keyframes decoBob { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+#game-toggle.on { background: #ff3f98; color: #fff; border-color: #8e1c52; }
+@media (prefers-reduced-motion: reduce) { .hud-grid, .hud-stars, .ps-stk, #lvlup .lv-heart, .xp-float { animation: none; } }

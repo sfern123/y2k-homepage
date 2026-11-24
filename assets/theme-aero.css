@@ -1,0 +1,162 @@
+/* ===================== THEME: Y2K / FRUTIGER AERO (lab copy only) ===================== */
+body.theme-aero {
+  font-family: Frutiger, "Segoe UI", "Myriad Pro", "Lucida Grande", "Trebuchet MS", sans-serif;
+  color: #0c3556;
+  background:
+    radial-gradient(ellipse 60% 40% at 18% 8%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 50% 30% at 85% 14%, rgba(255,255,255,.7), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 140% 45% at 50% 108%, #4fb82e 0%, #8fdc55 38%, rgba(170,235,120,0) 62%),
+    linear-gradient(180deg, #3aa6e8 0%, #86cff5 28%, #c9ecff 55%, #e9f8ff 72%, #c7f0a6 88%, #7fd14d 100%);
+  background-attachment: fixed;
+}
+body.theme-aero a { color: #0b63a8; }
+body.theme-aero a:visited { color: #3b5f99; }
+body.theme-aero #page { position: relative; z-index: 1; }
+
+/* floating bubbles */
+#aero-bubbles { display: none; position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+body.theme-aero #aero-bubbles { display: block; }
+#aero-bubbles i {
+  position: absolute; bottom: -90px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, rgba(255,255,255,.95) 0 8%, rgba(255,255,255,.35) 18%, rgba(160,220,255,.18) 55%, rgba(255,255,255,.55) 72%, rgba(255,255,255,0) 74%);
+  box-shadow: inset 0 0 12px rgba(255,255,255,.6);
+  animation: aeroRise linear infinite;
+}
+@keyframes aeroRise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  8% { opacity: .9; }
+  50% { transform: translate(28px, -55vh); }
+  100% { transform: translate(-18px, -115vh); opacity: 0; }
+}
+
+/* windows = frosted glass */
+body.theme-aero .win {
+  background: rgba(255,255,255,.52);
+  -webkit-backdrop-filter: blur(12px) saturate(1.5); backdrop-filter: blur(12px) saturate(1.5);
+  border: 1px solid rgba(255,255,255,.9); border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,70,140,.20), inset 0 1px 0 rgba(255,255,255,.95);
+  overflow: hidden;
+}
+body.theme-aero .titlebar {
+  background: linear-gradient(180deg, #d9f3ff 0%, #8fd6fa 48%, #3aa7e6 50%, #5cc3f4 100%);
+  color: #fff; font: bold 12px Frutiger, "Segoe UI", "Lucida Grande", sans-serif;
+  text-shadow: 0 1px 2px rgba(0,60,120,.6); padding: 5px 8px 5px 12px;
+  border-bottom: 1px solid rgba(20,110,180,.45);
+}
+body.theme-aero .titlebar .btns span {
+  width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(0,70,130,.45);
+  background: radial-gradient(circle at 35% 30%, #fff 0 15%, #bfe8ff 35%, #3aa0de 80%);
+  color: transparent; font-size: 0;
+}
+body.theme-aero .titlebar .btns span:last-child { background: radial-gradient(circle at 35% 30%, #fff 0 15%, #ffc2b3 35%, #e0452a 80%); }
+
+/* buttons = glossy capsules */
+body.theme-aero .btn {
+  font: 12px Frutiger, "Segoe UI", "Lucida Grande", sans-serif; color: #0c3556;
+  border: 1px solid #5aa9dc; border-radius: 999px; padding: 3px 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #e3f5ff 48%, #b9e3fb 50%, #d9f2ff 100%);
+  box-shadow: 0 1px 3px rgba(0,80,150,.25), inset 0 1px 0 #fff;
+}
+body.theme-aero .btn:hover { background: linear-gradient(180deg, #ffffff 0%, #d4f0ff 48%, #9fd8fb 50%, #c8ecff 100%); }
+body.theme-aero .btn:active, body.theme-aero .btn.on {
+  border-color: #3f9a22; color: #fff; text-shadow: 0 1px 1px rgba(0,60,0,.5);
+  background: linear-gradient(180deg, #c9f7a8 0%, #7fdb4f 48%, #4fbf22 50%, #86e05a 100%);
+}
+
+/* insets / fields */
+body.theme-aero .inset {
+  background: rgba(255,255,255,.85); border: 1px solid rgba(90,160,210,.55); border-radius: 12px;
+  box-shadow: inset 0 2px 6px rgba(0,80,150,.12);
+}
+body.theme-aero fieldset { border: 1px solid rgba(255,255,255,.95); border-radius: 12px; background: rgba(255,255,255,.4); }
+body.theme-aero legend {
+  font-size: 11px; color: #fff; padding: 1px 10px; border-radius: 999px; text-shadow: 0 1px 1px rgba(0,60,120,.5);
+  background: linear-gradient(180deg, #8fd6fa, #2f9ee0);
+}
+body.theme-aero .item { border-bottom: 1px solid rgba(90,160,210,.25); }
+body.theme-aero hr.groove { border-top-color: rgba(90,160,210,.4); border-bottom-color: rgba(255,255,255,.9); }
+
+/* tickers = glossy pills */
+body.theme-aero .ticker {
+  font: bold 12px Frutiger, "Segoe UI", sans-serif; color: #0a4a7a; border-radius: 999px; padding: 4px 0;
+  border: 1px solid rgba(255,255,255,.95);
+  background: linear-gradient(180deg, rgba(255,255,255,.95) 0%, rgba(220,244,255,.9) 48%, rgba(180,228,252,.9) 50%, rgba(215,242,255,.9) 100%);
+  box-shadow: 0 4px 14px rgba(0,80,150,.18);
+}
+
+/* greeting + quote */
+body.theme-aero .wa-ch {
+  background: linear-gradient(180deg, #ffffff 0%, #d8f4ff 30%, #52bdf5 52%, #1583cf 72%, #7fd6ff 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-text-stroke: 1px #0b5c9c;
+  filter: drop-shadow(0 2px 0 rgba(255,255,255,.9)) drop-shadow(0 4px 6px rgba(0,90,170,.35));
+}
+body.theme-aero .quote-wrap { transform: none; }
+body.theme-aero .wa-quote {
+  font: italic 600 21px/1.4 Frutiger, "Segoe UI", "Lucida Grande", sans-serif; letter-spacing: 0;
+  background: linear-gradient(180deg, #1c7fc4, #0d4f87); -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-text-stroke: 0; filter: drop-shadow(0 1px 0 rgba(255,255,255,.9));
+}
+body.theme-aero .quote-attr { font-family: Frutiger, "Segoe UI", sans-serif; color: #245a82; }
+body.theme-aero .quote-attr .note { color: #4b7fa6; }
+
+/* sisyphus tinted to sky */
+body.theme-aero #plant svg { filter: sepia(.6) hue-rotate(160deg) saturate(2.2) brightness(1.04); }
+body.theme-aero .plant-name, body.theme-aero .plant-status, body.theme-aero .todo-prog, body.theme-aero .car-count { font-family: Frutiger, "Segoe UI", sans-serif; }
+body.theme-aero .hpbar { border-radius: 999px; padding: 2px; }
+body.theme-aero .hpfill {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #dcffc4 0%, #8fe060 45%, #4dbd24 52%, #9be86e 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+/* news */
+body.theme-aero .slide-cat { border-radius: 999px; padding: 2px 9px; font-family: Frutiger, "Segoe UI", sans-serif; background: linear-gradient(180deg, #5cc3f4, #1f86cf); }
+body.theme-aero .blink { border-radius: 999px; border: 1px solid #3f9a22; color: #fff; padding: 0 6px; background: linear-gradient(180deg, #b8f38f, #4fbf22); }
+body.theme-aero .slide-title { font-family: Frutiger, "Segoe UI", sans-serif; color: #0b4f86; }
+body.theme-aero .slide-blurb { color: #173f5f; }
+body.theme-aero .dot { width: 10px; height: 10px; border-radius: 50%; border: 1px solid #5aa9dc; background: radial-gradient(circle at 35% 30%, #fff, #cdeeff); }
+body.theme-aero .dot.on { background: radial-gradient(circle at 35% 30%, #fff 0 12%, #5cc3f4 40%, #1f86cf 90%); }
+
+/* to-do bits */
+body.theme-aero .cb { border-radius: 5px; border: 1px solid #5aa9dc; box-shadow: inset 0 1px 3px rgba(0,80,150,.2); }
+body.theme-aero .cb:checked { background: linear-gradient(180deg, #c9f7a8, #4fbf22); border-color: #3f9a22; }
+body.theme-aero .cb:checked::after { color: #fff; left: 1px; top: -2px; }
+body.theme-aero .due { border-radius: 999px; padding: 0 7px; font-family: Frutiger, "Segoe UI", sans-serif; border: 1px solid rgba(0,0,0,.15); }
+body.theme-aero .due.hot { background: linear-gradient(180deg, #ffb58a, #f0641e); color: #fff; }
+body.theme-aero .due.warm { background: linear-gradient(180deg, #a7e2ff, #3aa7e6); color: #fff; }
+body.theme-aero .due.cool { background: linear-gradient(180deg, #ffffff, #dff3ff); color: #0c3556; }
+body.theme-aero .due.past { background: rgba(255,255,255,.6); color: #6f8aa0; }
+body.theme-aero .item.done .item-text { color: #7e97aa; }
+
+/* today.txt + agenda */
+body.theme-aero .txt, body.theme-aero .agenda { font-family: Frutiger, "Segoe UI", sans-serif; }
+body.theme-aero .txt .when, body.theme-aero .agenda .awhen { color: #1f6fa8; font-weight: 600; }
+
+/* social_life.exe */
+body.theme-aero .soc { font-family: Frutiger, "Segoe UI", sans-serif; }
+body.theme-aero .soc-day { border-bottom: 1px solid rgba(90,160,210,.25); }
+body.theme-aero .soc-day.today .soc-lbl { border-radius: 999px; border-color: #1f86cf; background: linear-gradient(180deg, #5cc3f4, #1f86cf); }
+body.theme-aero .zzz { color: #3aa7e6; }
+body.theme-aero .soc-status { color: #0b5c9c; }
+
+/* urgent cards: glossy orange glass */
+body.theme-aero .u-card { border: 1px solid #ff9a3c; border-radius: 14px; overflow: hidden; background: linear-gradient(180deg, rgba(255,250,225,.95), rgba(255,229,170,.92)); box-shadow: 0 6px 16px rgba(200,90,0,.3); }
+body.theme-aero .u-top { background: linear-gradient(180deg, #ffc27a 0%, #ff8a1f 50%, #f06a00 51%, #ff9d3a 100%); }
+body.theme-aero .u-count { border-radius: 999px; border: none; background: linear-gradient(180deg, #334, #000); }
+
+/* footer */
+body.theme-aero .footer { color: #0c3556; }
+body.theme-aero .counter { border-radius: 8px; border: 1px solid #5aa9dc; background: linear-gradient(180deg, #0b3a66, #06223e); color: #9fe3ff; }
+body.theme-aero #toast { border-radius: 16px; }
+
+/* lab theme switcher (both themes) */
+#theme-switch {
+  position: fixed; top: 10px; right: 10px; z-index: 80; display: flex; gap: 4px; align-items: center;
+  font: 11px Tahoma, sans-serif; background: rgba(255,255,255,.85); border: 1px solid #888; padding: 4px 6px; border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+#theme-switch b { margin-right: 2px; }
+#theme-switch button { font: 11px Tahoma, sans-serif; border: 1px solid #888; background: #eee; padding: 2px 8px; border-radius: 4px; cursor: pointer; }
+#theme-switch button.on { background: #222; color: #fff; }
+@media (prefers-reduced-motion: reduce) { #aero-bubbles i { animation: none; opacity: .6; } }

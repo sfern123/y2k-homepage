@@ -1,0 +1,48 @@
+/* events.exe (Oct 19, 2026). Wide screens: pinned in the right gutter. Narrow: sits under the main window. */
+#events-feed { display: flex; flex-direction: column; background: var(--inset, #fff6fa); color: var(--ink, #4a0f2e); font-size: 12.5px; line-height: 1.35; max-height: 560px; margin-bottom: 12px; }
+@media (min-width: 1480px) {
+  #events-feed { position: fixed; z-index: 3; top: 16px; bottom: 16px; max-height: none; margin: 0;
+    left: calc(50% + 466px); width: min(340px, calc(50% - 484px)); }
+}
+#events-feed .titlebar { flex: 0 0 auto; }
+.ef-now { flex: 0 0 auto; background: var(--lcd-bg, #2b0716); color: var(--lcd-fg, #ff5fa8); font: 11px/1.45 "Courier New", monospace; padding: 7px 10px; border-bottom: 2px solid var(--dark, #6e1c46); text-shadow: var(--lcd-glow, none); }
+.ef-now b { color: #fff; }
+.ef-filters { flex: 0 0 auto; display: flex; flex-wrap: wrap; gap: 4px; padding: 7px 8px; border-bottom: 1px solid var(--soft, #f5a3c9); }
+.ef-f { font: 11px Tahoma, Verdana, sans-serif; padding: 2px 7px; cursor: pointer; background: var(--face, #f8c3dc); color: var(--ink, #4a0f2e);
+  border: 1px solid; border-color: var(--hi, #fff) var(--dark, #6e1c46) var(--dark, #6e1c46) var(--hi, #fff); }
+.ef-f.ef-c { border-width: 1px 2px 2px 1px; margin: 0; }
+.ef-f.on { font-weight: bold; outline: 2px solid var(--dark, #6e1c46); outline-offset: -1px; }
+.ef-f:not(.ef-c).on { background: #fff; }
+.ef-scroll { flex: 1 1 auto; overflow-y: auto; min-height: 0; }
+.ef-day { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; background: var(--soft, #f5a3c9); color: var(--dark, #6e1c46);
+  font: bold 11px Tahoma, sans-serif; letter-spacing: .5px; text-transform: uppercase; padding: 4px 10px; }
+.ef-day small { font-weight: normal; text-transform: none; }
+.ef-empty { padding: 8px 10px; font-size: 11px; color: var(--lo, #c45a8e); font-style: italic; }
+.ef-slot { display: grid; grid-template-columns: 64px 1fr; border-bottom: 1px dotted var(--soft, #f5a3c9); }
+.ef-slot.live { background: #fff; box-shadow: inset 4px 0 0 var(--accent, #e0288a); }
+.ef-t { font: bold 11px "Courier New", monospace; color: var(--lo, #c45a8e); padding: 7px 0 0 10px; }
+.ef-t em { display: block; font-style: normal; font-size: 9px; color: var(--accent, #e0288a); }
+.ef-cnt { display: block; width: max-content; margin-top: 3px; padding: 1px 3px; font: bold 9px Tahoma, sans-serif; color: #fff; background: var(--lo, #c45a8e); }
+.ef-ev { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: start; padding: 6px 10px 6px 0; border-bottom: 1px dotted #f6d2e3; }
+.ef-ev:last-child { border-bottom: 0; }
+.ef-n { font-weight: bold; }
+.ef-n a { color: inherit; text-decoration: none; }
+.ef-n a:hover { text-decoration: underline; color: var(--accent, #e0288a); }
+.ef-ev.opt .ef-n { font-weight: normal; }
+.ef-w { font-size: 11px; color: #9a4a72; }
+.ef-note { color: var(--accent, #e0288a); font-weight: bold; text-decoration: none; }
+a.ef-note:hover { text-decoration: underline; }
+.ef-maybe { border: 1px dashed var(--lo, #c45a8e); padding: 0 3px; font-size: 10px; }
+.ef-c { font-size: 9.5px; padding: 1px 5px; border: 1px solid; white-space: nowrap; margin-top: 2px; }
+.ef-c.club   { background: #ffe3f0; border-color: #e0288a; color: #b3186a; }
+.ef-c.career { background: #dff6ea; border-color: #2e9e6a; color: #1d6646; }
+.ef-c.social { background: #fff3c4; border-color: #d39b00; color: #7a5600; }
+.ef-c.acad   { background: #e6e0ff; border-color: #7a5bd6; color: #4a2c9a; }
+.ef-c.class  { background: #fff;    border-color: #c45a8e; color: #c45a8e; }
+.ef-c.me     { background: #fff;    border-color: #6e1c46; color: #6e1c46; }
+.ef-foot { flex: 0 0 auto; display: flex; justify-content: space-between; padding: 5px 10px; font-size: 10.5px; border-top: 2px solid var(--soft, #f5a3c9); background: var(--face, #f8c3dc); }
+.ef-foot a { color: var(--dark, #6e1c46); }
+
+/* the today chip row and the next-event marquee moved into events.exe; hidden, not removed (app-2 still writes to them) */
+#today-strip { display: none !important; }
+.ticker:has(#nextbar) { display: none; }

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>~*~ my homepage ~*~</title>
+<link rel="stylesheet" href="assets/base-0.css">
+<link rel="stylesheet" href="assets/theme-aero.css" id="theme-aero">
+<link rel="stylesheet" href="assets/theme-pastel98.css" id="theme-pastel98">
+<link rel="stylesheet" href="assets/theme-pastel98-icons.css" id="theme-pastel98-icons">
+<link rel="stylesheet" href="assets/game-mode.css" id="game-mode">
+<link rel="stylesheet" href="assets/social-fun.css" id="social-fun">
+<link rel="stylesheet" href="assets/urgent-bounce.css" id="urgent-bounce">
+<link rel="stylesheet" href="assets/home-overrides.css" id="home-overrides">
+<link rel="stylesheet" href="assets/events-feed.css" id="events-feed-css">
+<link rel="stylesheet" href="assets/layout-v2.css" id="layout-v2-css">
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div id="aero-bubbles" aria-hidden="true"></div>
+<div id="shell">
+<nav id="lab-desktop" aria-label="desktop shortcuts">
+  <a class="dicon" href="https://example.edu" target="_blank" rel="noopener" title="portal"><span class="ico ico-crt"></span><span class="dlabel">portal</span></a>
+  <a class="dicon" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener" title="inbox"><span class="ico ico-mail"></span><span class="dlabel">inbox</span></a>
+  <a class="dicon" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" title="calendar"><span class="ico ico-cal"></span><span class="dlabel">calendar</span></a>
+  <a class="dicon" href="https://canvas.instructure.com" target="_blank" rel="noopener" title="canvas"><span class="ico ico-folder"></span><span class="dlabel">canvas</span></a>
+  <a class="dicon" href="#sec-hw" title="homework"><span class="ico ico-pencil"></span><span class="dlabel">homework</span></a>
+  <a class="dicon" href="#sec-jobs" title="job hunt"><span class="ico ico-case"></span><span class="dlabel">job hunt</span></a>
+  <a class="dicon" href="https://open.spotify.com" target="_blank" rel="noopener" title="tunes"><span class="ico ico-note"></span><span class="dlabel">tunes</span></a>
+  <a class="dicon" href="https://photos.google.com" target="_blank" rel="noopener" title="photos"><span class="ico ico-camera"></span><span class="dlabel">photos</span></a>
+  <button type="button" class="dicon" id="missed-open" data-missed-open title="missed deadlines" aria-label="missed deadlines"><svg class="ico-bin" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><rect x="6" y="1" width="4" height="1" fill="#6e1c46"/><rect x="2" y="2" width="12" height="2" fill="#6e1c46"/><rect x="3" y="2" width="10" height="1" fill="#f5a3c9"/><rect x="3" y="5" width="10" height="10" fill="#6e1c46"/><rect x="4" y="5" width="8" height="9" fill="#fff0f7"/><rect x="5" y="7" width="2" height="2" fill="#4a0f2e"/><rect x="9" y="7" width="2" height="2" fill="#4a0f2e"/><rect x="6" y="11" width="4" height="1" fill="#4a0f2e"/><rect x="4" y="10" width="1" height="1" fill="#ff8fc2"/><rect x="11" y="10" width="1" height="1" fill="#ff8fc2"/></svg><span class="miss-n" hidden></span><span class="dlabel">missed</span></button>
+</nav>
+<div id="lab-deco" aria-hidden="true"><div class="emo pk" style="top:11%;right:70px;transform:rotate(-8deg);animation-delay:-0.00s">🎀</div><div class="emo pk" style="top:24%;right:22px;transform:rotate(10deg);animation-delay:-0.37s">🍓</div><div class="emo pk" style="top:38%;right:76px;transform:rotate(-4deg);animation-delay:-0.74s">🌸</div><div class="emo pk" style="top:70%;right:70px;transform:rotate(8deg);animation-delay:-1.11s">💌</div><div class="emo pk" style="top:84%;right:24px;transform:rotate(-6deg);animation-delay:-1.48s">🍰</div><div class="emo pk" style="top:6%;right:20px;transform:rotate(0deg);animation-delay:-1.85s">✨</div><div class="emo lc" style="top:10%;right:60px;transform:rotate(-8deg);animation-delay:-2.22s">🦋</div><div class="emo lc" style="top:26%;right:22px;transform:rotate(6deg);animation-delay:-2.59s">🔮</div><div class="emo lc" style="top:40%;right:78px;transform:rotate(-10deg);animation-delay:-2.96s">⭐</div><div class="emo lc" style="top:70%;right:64px;transform:rotate(12deg);animation-delay:-3.33s">💿</div><div class="emo lc" style="top:84%;right:22px;transform:rotate(-6deg);animation-delay:-3.70s">🪐</div><div class="emo lc" style="top:5%;right:18px;transform:rotate(0deg);animation-delay:-4.07s">✨</div><div class="deco-pudding"></div><div class="deco-heart h1"></div><div class="deco-heart h2"></div><div class="deco-heart h3"></div><div class="deco-cloud c1"></div><div class="deco-cloud c2"></div><div class="deco-cloud c3"></div><div class="deco-cloud c4"></div><div class="deco-cloud c5"></div></div>
+<div id="theme-switch"><b>lab theme:</b><button data-theme="">original</button><button data-theme="theme-aero">aero</button><button data-theme="theme-pink98">pink 98</button><button data-theme="theme-lilac98">lilac 98</button></div>
+<script src="assets/app-1.js"></script>
+
+
+<div id="page">
+
+  <div class="ticker"><marquee scrollamount="4" id="marquee">~*~ welcome 2 my homepage ~*~</marquee></div>
+
+  <!-- HEADER: greeting + quote (left), plant (right) -->
+  <div class="win">
+    <div class="titlebar"><span>■ <span data-hp-name>me</span>.exe</span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+    <div class="hero">
+      <div class="hero-left">
+        <div class="wordart-greet" id="greet"></div>
+        <div class="quote-wrap"><span class="wa-quote" id="quote"></span></div>
+        <div class="quote-attr" id="quote-attr"></div>
+        <div id="urgent">
+          <div class="u-row">
+            <button class="btn u-arrow" id="u-prev" aria-label="previous">◄</button>
+            <div class="u-track" id="u-list"></div>
+            <button class="btn u-arrow" id="u-next" aria-label="next">►</button>
+          </div>
+        </div>
+        <div id="today-strip" aria-label="today's events"></div>
+      </div>
+      <div class="hero-right">
+        <div class="win" style="margin:8px 8px 8px 0;">
+          <div class="titlebar"><span>● sisyphus.exe</span><span class="btns"><span>x</span></span></div>
+          <div class="winbody plant-box">
+            <div id="plant"></div>
+            <div class="plant-name">~ SISYPHUS ~</div>
+            <div class="plant-status" id="plant-status"></div>
+            <div class="inset hpbar"><div class="hpfill" id="hpfill"></div></div>
+            <div class="plant-hint">check things off to push the boulder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPPORTUNITIES (app-7, Nov 1): calm deadline board — fellowships / jobs + internships / classes. Only homework bounces above. -->
+  <div class="win" id="opp-win">
+    <div class="titlebar"><span>■ opportunities.exe<small id="opp-count"></small></span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+    <div id="opp-board" aria-label="application deadlines"></div>
+  </div>
+
+  <!-- NEXT CLASS / NEXT EVENT -->
+  <div class="ticker"><marquee scrollamount="4" id="nextbar">~*~ loading schedule... ~*~</marquee></div>
+  <div class="win" id="lab-toolbar"><div class="lab-tools">
+    <a class="btn tool" href="#sec-hw" title="homework"><span class="ico ico-pencil"></span></a>
+    <a class="btn tool" href="#sec-jobs" title="job hunt"><span class="ico ico-case"></span></a>
+    <a class="btn tool" href="#soc-week" title="social"><span class="ico ico-heart"></span></a>
+    <a class="btn tool" href="#news-win" title="news"><span class="ico ico-news"></span></a>
+    <span class="sep"></span>
+    <a class="btn tool" href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener" title="inbox"><span class="ico ico-mail"></span></a>
+    <a class="btn tool" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" title="calendar"><span class="ico ico-cal"></span></a>
+    <a class="btn tool" href="https://canvas.instructure.com" target="_blank" rel="noopener" title="canvas"><span class="ico ico-folder"></span></a>
+    <span class="sep"></span>
+    <span class="btn tool" title="save (it's decorative)"><span class="ico ico-floppy"></span></span>
+    <span class="btn tool" title="cd player coming soon"><span class="ico ico-cd"></span></span>
+    <span class="btn tool" title="smile"><span class="ico ico-smile"></span></span>
+    <span class="btn tool" title="strawberry"><span class="ico ico-berry"></span></span>
+    <span class="btn tool" title="bow"><span class="ico ico-bow"></span></span>
+    <span class="emo-row" id="lab-emo"></span>
+    <span class="lab-lcd" id="lab-clock">--:-- --</span>
+  </div></div>
+  <!-- CANVAS QUICK LINKS -->
+  <div class="win" id="canvas-links">
+    <div class="titlebar"><span>■ canvas_links.exe</span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+    <div class="winbody" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px" id="course-links">
+      <!-- filled from config.js (HOMEPAGE_CONFIG.courses) -->
+    </div>
+  </div>
+  <!-- GAME MODE: arcade HUD -->
+  <div id="arcade-hud" aria-label="game stats">
+    <div class="hud-stars"></div><div class="hud-sun"></div><div class="hud-grid"></div>
+    <span class="hud-palm l">🌴</span><span class="hud-palm r">🌴</span>
+    <div class="hud-stats">
+      <span class="hud-stat" title="time until your next deadline"><span class="hud-lbl t">TIME</span><span class="hud-val" id="hud-time">--:--</span></span>
+      <span class="hud-stat"><span class="hud-lbl s">SCORE</span><span class="hud-val" id="hud-score">000000</span></span>
+      <span class="hud-stat" title="level + progress to the next one"><span class="hud-lbl v">LV</span><span class="hud-val" id="hud-lv">1</span><span class="hud-xp"><i id="hud-xp" style="width:0%"></i></span></span>
+      <span class="hud-stat" title="week of autumn quarter"><span class="hud-lbl l">LAP</span><span class="hud-val" id="hud-lap">1/10</span></span>
+      <span class="hud-stat" title="days in a row with at least one check"><span class="hud-lbl k">STREAK</span><span class="hud-val" id="hud-streak">0</span></span>
+      <span class="hud-stat" title="best single-day score"><span class="hud-lbl h">HI</span><span class="hud-val" id="hud-hi">0</span></span>
+    </div>
+    <div class="hud-mid"><span class="hud-coin" id="hud-coin">INSERT COIN</span><button class="hud-replay" id="hud-replay">▶ start screen</button></div>
+    <div class="hud-boss" id="hud-boss"></div>
+  </div>
+
+  <!-- NEWS CAROUSEL -->
+  <div class="win" id="news-win">
+    <div class="titlebar"><span id="news-title">■ news_ticker.exe</span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+    <div class="winbody">
+      <div class="cats" id="cats"></div>
+      <div class="inset slide" id="slide"></div>
+      <div class="car-nav">
+        <button class="btn" id="prev">&lt;&lt; back</button>
+        <div class="dots" id="dots"></div>
+        <span class="car-count" id="car-count"></span>
+        <button class="btn" id="next">next &gt;&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TO-DO controls (shared by homework / jobs / social / misc) -->
+  <div class="win">
+    <div class="winbody todo-top toolbar">
+      <b>view:</b>
+      <button class="btn on" data-filter="open">open</button>
+      <button class="btn" data-filter="all">all</button>
+      <button class="btn" data-filter="done">done</button>
+      <span class="spacer"></span>
+      <span class="todo-prog" id="todo-prog"></span>
+      <button class="btn" id="trash-open" title="trashed to-dos (restore)">🗑 trash <span id="trash-n"></span></button>
+      <button type="button" class="btn" id="missed-open-2" data-missed-open title="deadlines that expired 24h+ ago">🪦 missed<span class="miss-n" hidden></span></button>
+      <button class="btn" id="clear-done">reset all checks</button>
+    </div>
+    <div class="trash-panel" id="trash-panel" style="display:none"></div>
+  </div>
+
+  <!-- HOMEWORK + SOCIAL_LIFE (left) | JOBS (right) -->
+  <div class="row2">
+    <div class="col-narrow">
+      <div class="win">
+        <div class="titlebar"><span>■ homework.exe</span><span class="btns"><span>_</span><span>x</span></span></div>
+        <div class="winbody" id="sec-hw"></div>
+      </div>
+      <div class="win">
+        <div class="titlebar"><span>● social_life.exe</span><span class="btns"><span>x</span></span></div>
+        <div class="inset soc" id="soc-art" style="margin:6px;"></div>
+      </div>
+    </div>
+    <div class="win col-wide">
+      <div class="titlebar"><span>■ job_hunt.exe</span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+      <div class="winbody" id="sec-jobs"></div>
+    </div>
+  </div>
+
+  <!-- SOCIAL LIST -->
+  <div class="win">
+    <div class="titlebar"><span>■ social_calendar.txt</span><span class="btns"><span>_</span><span>□</span><span>x</span></span></div>
+    <div class="winbody">
+      <div id="soc-week"></div>
+      <div id="sec-social"></div>
+    </div>
+  </div>
+
+  <!-- GAME MODE: sticker book -->
+  <div class="win" id="sticker-book-win">
+    <div class="titlebar"><span>■ sticker_book.exe</span><span class="btns"><span>_</span><span>x</span></span></div>
+    <div class="winbody"><div class="book-head" id="book-head"></div><div class="book" id="book"></div></div>
+  </div>
+
+  <!-- MISC / ADMIN (hidden when empty) -->
+  <div class="win" id="misc-win">
+    <div class="titlebar"><span>■ misc_admin.txt</span><span class="btns"><span>x</span></span></div>
+    <div class="winbody" id="sec-misc"></div>
+  </div>
+
+  <!-- TODAY -->
+  <div class="win">
+    <div class="titlebar"><span>■ today.txt</span><span class="btns"><span>x</span></span></div>
+    <div class="inset txt" id="today" style="margin:6px;"></div>
+  </div>
+
+  <div class="footer">
+    <hr class="groove">
+    you are visitor # <span class="counter" id="counter">000000</span><br>
+    best viewed in Netscape Navigator 4.0 at 800x600 · last updated <span id="updated"></span><br>
+    © 2026 <span data-hp-name>me</span> · no rights reserved · sign my guestbook (jk there is no guestbook)
+  </div>
+</div>
+
+<!-- EVENTS FEED (app-6): always on the right (layout-v2.css) -->
+<aside class="win" id="events-feed" aria-label="upcoming events"></aside>
+</div><!-- /#shell -->
+
+<!-- MISSED (app-7): auto-expired deadlines + past events -->
+<div id="missed-win" hidden role="dialog" aria-modal="true" aria-label="missed deadlines">
+  <div class="win">
+    <div class="titlebar"><span>🪦 missed.exe</span><span class="btns"><button type="button" id="missed-close" aria-label="close">x</button></span></div>
+    <div id="missed-body"></div>
+  </div>
+</div>
+
+<div id="toast" class="win">
+  <div class="titlebar"><span>✓ task_complete.wav</span><span class="btns"><span>x</span></span></div>
+  <div class="winbody" id="toast-body"></div>
+</div>
+
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="courses.js"></script>
+<script src="tasks-archive.js"></script>
+<script>if (typeof DATA === "undefined") window.DATA = { generatedAt: "data.js missing", urgent: [], news: [], today: { headline: "data.js did not load: check the Homepage folder", items: [] }, schedule: [], tasks: [] };</script>
+<script src="assets/app-2.js"></script>
+<script src="assets/app-3.js"></script>
+<div id="press-start" role="dialog" aria-label="press start">
+  <div class="ps-frame">
+    <span class="ps-stk" style="left:-18px;top:-22px;font-size:62px">😊</span>
+    <span class="ps-stk" style="left:58px;top:-14px;font-size:30px;animation-delay:-.5s">⭐</span>
+    <span class="ps-stk" style="left:96px;top:8px;font-size:22px;animation-delay:-1s">✨</span>
+    <span class="ps-stk" style="right:-34px;top:-40px;width:150px;animation-delay:-.3s"><svg style="width:150px;display:block" viewBox="0 0 120 110" aria-hidden="true">
+  <defs><linearGradient id="lvg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb3dc"/><stop offset="1" stop-color="#ff3f98"/></linearGradient></defs>
+  <path d="M60 102 C24 78 6 58 6 36 C6 18 20 6 36 6 C47 6 55 12 60 22 C65 12 73 6 84 6 C100 6 114 18 114 36 C114 58 96 78 60 102Z" fill="url(#lvg2)" stroke="#fff" stroke-width="6"/>
+  <path d="M28 24 Q36 14 48 18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+  <rect x="6" y="10" width="38" height="12" fill="#c9a6e8" opacity=".75" transform="rotate(-28 25 16)"/>
+  <text x="60" y="52" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-style="italic" font-weight="700" font-size="26" fill="#7ff3ff" stroke="#b3186a" stroke-width="1.2">Level</text>
+  <text x="62" y="80" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-style="italic" font-weight="700" font-size="30" fill="#7ff3ff" stroke="#b3186a" stroke-width="1.2">Up!</text>
+</svg></span>
+    <span class="ps-stk" style="right:-22px;bottom:-26px;font-size:58px;animation-delay:-.8s">🦋</span>
+    <span class="ps-pill" style="right:60px;bottom:-18px">DREAM BIG</span>
+    <span class="ps-stk" style="left:-16px;bottom:-14px;font-size:40px;animation-delay:-1.3s">⭐</span>
+    <span class="ps-dot" style="left:44px;bottom:-16px;background:#b9a6ff">Y</span>
+    <span class="ps-dot" style="left:86px;bottom:-12px;background:#ff8cc6">2</span>
+    <span class="ps-dot" style="left:128px;bottom:-18px;background:#ffb347">K</span>
+    <div class="ps-screen">
+      <span class="ps-spark" style="left:8%;top:12%">✦</span><span class="ps-spark" style="left:86%;top:18%;animation-delay:-.4s">✦</span>
+      <span class="ps-spark" style="left:14%;top:70%;animation-delay:-.8s">✦</span><span class="ps-spark" style="left:80%;top:72%;animation-delay:-.2s">✦</span>
+      <span class="ps-spark" style="left:48%;top:6%;animation-delay:-1s">✦</span>
+      <div class="ps-title"><span class="b">WELCOME</span></div>
+      <div class="ps-btns"><button class="ps-btn start" id="ps-start">START</button></div>
+      <div class="ps-stats" id="ps-stats"></div>
+      <div class="ps-hint">press any key</div>
+      <div class="ps-fine">© 2026 <span data-hp-name data-upper>ME</span> · ALL RIGHTS RESERVED</div>
+    </div>
+  </div>
+</div>
+<div id="lvlup"><svg class="lv-heart" viewBox="0 0 120 110" aria-hidden="true">
+  <defs><linearGradient id="lvg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb3dc"/><stop offset="1" stop-color="#ff3f98"/></linearGradient></defs>
+  <path d="M60 102 C24 78 6 58 6 36 C6 18 20 6 36 6 C47 6 55 12 60 22 C65 12 73 6 84 6 C100 6 114 18 114 36 C114 58 96 78 60 102Z" fill="url(#lvg)" stroke="#fff" stroke-width="6"/>
+  <path d="M28 24 Q36 14 48 18" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+  <rect x="6" y="10" width="38" height="12" fill="#c9a6e8" opacity=".75" transform="rotate(-28 25 16)"/>
+  <text x="60" y="52" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-style="italic" font-weight="700" font-size="26" fill="#7ff3ff" stroke="#b3186a" stroke-width="1.2">Level</text>
+  <text x="62" y="80" text-anchor="middle" font-family="Brush Script MT, Segoe Script, cursive" font-style="italic" font-weight="700" font-size="30" fill="#7ff3ff" stroke="#b3186a" stroke-width="1.2">Up!</text>
+</svg><div class="lv-sub" id="lv-sub"></div></div>
+<div id="ach"><span class="ae" id="ach-e"></span><span><span class="at">★ ACHIEVEMENT UNLOCKED ★</span><br><span id="ach-n"></span></span></div>
+<script src="assets/app-4.js"></script>
+<script src="assets/app-5.js"></script>
+<script src="assets/app-6.js"></script>
+<script src="assets/app-7.js"></script>
+</body>
+</html>
